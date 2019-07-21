@@ -163,7 +163,7 @@ LOGIN_REDIRECT_URL = '/home'
 
 
 #EMAIL_BACKEND for development
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 #Email configuration
 EMAIL_HOST = 'smtp.mailtrap.io'
