@@ -60,7 +60,7 @@ ROOT_URLCONF = 'efs.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -160,17 +160,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = '/home'
+LOGOUT_REDIRECT_URL='/home'
 
 
-#EMAIL_BACKEND for development
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-#Email configuration
-EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_HOST_USER = '8306b899de030a'
-EMAIL_HOST_PASSWORD = 'ec2651f5dc2736'
-EMAIL_PORT = '2525'
-DEFAULT_FROM_EMAIL = 'vishekhatamrakar03gmail.com'
 
 try:
     from .local_settings import *

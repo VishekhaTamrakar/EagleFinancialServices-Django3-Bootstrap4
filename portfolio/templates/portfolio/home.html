@@ -1,76 +1,62 @@
 {% extends 'portfolio/base.html' %}
-{% load staticfiles %}
+{% load static %}
 {% block content %}
-<body style="background-color:pink;">
+<body>
             {% if user.is_authenticated %}
-                <div class="page-container">
-
-                    <h1 class="top-menu"><B>Hello {{ user.username }},</B></h1>
-                    <u><I><b><u>Please choose from below options.</I></b></u></p>
-
-                </div>
+                     <header class="jumbotron my-4" style="background: white">
+                 <p class="lead"><b>Hello {{ user.username }},</b></p>
+                     <p>Please choose from below options:</p>
+         </header>
             {% endif %}
-            <div class="content container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="links">
-                            <!-- Example row of columns -->
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="thumbnail">
-                                        <img src="{% static "images/customers.jpg" %}" alt="customers"/>
-                                        <div class="caption">
-                                            <h2>Customer</h2>
-                                            <p>We see our success in our customers success, it gives us an immense
-                                                pleasure when our
-                                                advises
-                                                turn out to be fruitful. </p>
-                                            <p><a class="btn btn-primary" href="{% url 'portfolio:customer_list' %}"
-                                                  role="button">View
-                                                details &raquo;</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="thumbnail">
-                                        <img src="{% static "images/nonstock.jpg" %}" alt="non-stock"/>
-                                        <div class="caption">
-                                            <h2>Non-Stock Investments</h2>
-                                            <p>Our team also provides advises for Non-Stock investments.</p>
-                                            <p><a class="btn btn-primary" href="{% url 'portfolio:investment_list' %}"
-                                                  role="button">View
-                                                details &raquo;</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="thumbnail">
-                                        <img src="{% static "images/stocks.jpg" %}" alt="stocks"/>
-                                        <div class="caption">
-                                            <h2>Stocks</h2>
-                                            <p>Our Stock portfolios vary across industries.</p>
-                                            <p><a class="btn btn-primary" href="{% url 'portfolio:stock_list' %}"
-                                                  role="button">View
-                                                details &raquo;</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="thumbnail">
-                                        <img src="{% static "images/mutualfunds.png" %}" alt="mutualfunds"/>
-                                        <div class="caption">
-                                            <h2>Mutualfunds</h2>
-                                            <p>We value your future the way you do.</p>
-                                            <p><a class="btn btn-primary" href="{% url 'portfolio:mutualfund_list' %}"
-                                                  role="button">View details &raquo;</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+<div class="container mt-4">
+    <div class="row">
+
+      <div class="col">
+        <div class="fa-credit-card text-center" >
+          <img class="card-img-top" src="{% static "images/customers.jpg" %}" alt="" style="height: 200px">
+          <div class="card-body">
+            <h4 class="card-title">Customer</h4>
+
+          </div>
+          <div class="card-footer">
+            <a href="{% url 'portfolio:customer_list' %}" class="btn btn-primary">View Details!</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="fa-credit-card text-center text-nowrap">
+          <img class="card-img-top" src="{% static "images/nonstock.jpg" %}" alt="" style="height: 200px">
+          <div class="card-body">
+            <h4 class="card-title">Stock Investments</h4>
+          </div>
+          <div class="card-footer">
+            <a href="{% url 'portfolio:investment_list' %}" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="fa-credit-card text-center">
+          <img class="card-img-top" src="{% static "images/stocks.jpg" %}" alt="" style="height: 200px">
+          <div class="card-body">
+            <h4 class="card-title">Stocks</h4>
+          </div>
+          <div class="card-footer">
+            <a href="{% url 'portfolio:stock_list' %}" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+
+
+        </div>
+      </div>
+         </div>
+    <!-- /.row -->
+
+  </div>
+</div>
     </body>
     </html>
 {% endblock %}

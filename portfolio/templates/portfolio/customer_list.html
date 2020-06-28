@@ -2,14 +2,8 @@
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
-<body style="background-color:pink;">
+<body>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Eagle Financial</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
-</head>
 <body>
 <style>
 
@@ -17,31 +11,19 @@
             background-color: beige;
         }
 </style>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Welcome!</div>
-                    <p class="panel-body">
-                        <b>Eagle Financial Services, your Midwest Financial Services Partner.</b>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+  <header class="jumbotron my-4 table-responsive" style="background: white">
+      <p class="lead text-nowrap"><b>Eagle Financial Services, your Midwest Financial Services Partner</b></p>
+         </header>
+
 <div class="row"><br>
 
     <h2 style="padding-left: 15Px"><u>Customer Information</u></h2>
     </div>
     <div>
-        <table class="table table-striped table-bordered table-hover">
+        <table class="table table-hover table-responsive-xl lead text-center">
             <thead>
-            <tr class="bg-info">
+            <tr bgcolor="white">
                 <th>Customer Number</th>
                 <th>Name</th>
                 <th>Address</th>
@@ -55,7 +37,7 @@
             </thead>
             <tbody>
             {% for customer in customers %}
-                <tr>
+                <tr bgcolor="white">
                     <td>{{ customer.cust_number }}</td>
                     <td>{{ customer.name }}</td>
                     <td>{{ customer.address }}</td>

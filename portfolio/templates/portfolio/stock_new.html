@@ -1,11 +1,11 @@
 {% extends 'portfolio/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-<body style="background-color:pink;">
+<body>
 
     <h1>Add a New Stock</h1>
     <form method="POST" class="stock-form">{% csrf_token %}
-          {{ form|crispy }}
+            {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Save</button>
     </form>
 {% endblock %}
